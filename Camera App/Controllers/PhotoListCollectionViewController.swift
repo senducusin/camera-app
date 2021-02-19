@@ -9,12 +9,18 @@ import Foundation
 import UIKit
 import Photos
 
+protocol PhotoListCollectionViewControllerDelegate{
+    func photoListDidSelectImage(selectedImage: UIImage)
+}
+
 class PhotoListCollectionViewController: UICollectionViewController{
     
     private var images = [PHAsset]()
+    var delegate: PhotoListCollectionViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.populatePhotos()
     }
@@ -68,5 +74,22 @@ extension PhotoListCollectionViewController{
             
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let asset = self.images[indexPath.row]
+        let manager = PHImageManager.default()
+        
+        let options = PHImageRequestOptions()
+        options.isSynchronous = true
+        
+        manager.requestImage(for: asset, targetSize: CGSize(width: 320, height: 480), contentMode: .aspectFill, options: options) { [weak self] (image, _) in
+            
+            if let image = image {
+                self?.delegate?.photoListDidSelectImage(selectedImage: image)
+            }
+            
+        }
+        
     }
 }
