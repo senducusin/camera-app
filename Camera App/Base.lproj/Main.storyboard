@@ -66,6 +66,9 @@
                             <constraint firstItem="nD7-Xz-1CX" firstAttribute="bottom" secondItem="MtK-8g-emb" secondAttribute="bottom" id="tKS-xF-jBd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="MtK-8g-emb" id="dYp-3d-hCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPF-EE-SWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
