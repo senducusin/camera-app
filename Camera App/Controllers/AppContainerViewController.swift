@@ -15,10 +15,7 @@ class AppContainerViewController: UIViewController{
             fatalError("PhotoFiltersViewController is not found!")
         }
         
-        self.addChild(photoFiltersVC)
-        photoFiltersVC.view.frame = self.view.frame
-        self.view.addSubview(photoFiltersVC.view)
-        photoFiltersVC.didMove(toParent: self)
+        self.addChildController(photoFiltersVC)
     }
     
 }
