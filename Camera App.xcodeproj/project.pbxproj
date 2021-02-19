@@ -15,6 +15,7 @@
 		A6791EC625DF4603001016F7 /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791EC525DF4603001016F7 /* AppContainerViewController.swift */; };
 		A6791EC925DF464B001016F7 /* PhotoListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791EC825DF464B001016F7 /* PhotoListCollectionViewController.swift */; };
 		A6791ECC25DF4696001016F7 /* PhotoFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ECB25DF4696001016F7 /* PhotoFiltersViewController.swift */; };
+		A6791ED025DF4B50001016F7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A6791EC525DF4603001016F7 /* AppContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerViewController.swift; sourceTree = "<group>"; };
 		A6791EC825DF464B001016F7 /* PhotoListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewController.swift; sourceTree = "<group>"; };
 		A6791ECB25DF4696001016F7 /* PhotoFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFiltersViewController.swift; sourceTree = "<group>"; };
+		A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		A6791EAB25DF41FB001016F7 /* Camera App */ = {
 			isa = PBXGroup;
 			children = (
+				A6791ECE25DF4B3A001016F7 /* Extensions */,
 				A6791EC325DF450D001016F7 /* Controllers */,
 				A6791EAC25DF41FB001016F7 /* AppDelegate.swift */,
 				A6791EAE25DF41FB001016F7 /* SceneDelegate.swift */,
@@ -79,6 +82,14 @@
 				A6791ECB25DF4696001016F7 /* PhotoFiltersViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A6791ECE25DF4B3A001016F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				A6791EAD25DF41FB001016F7 /* AppDelegate.swift in Sources */,
 				A6791EAF25DF41FB001016F7 /* SceneDelegate.swift in Sources */,
 				A6791EC625DF4603001016F7 /* AppContainerViewController.swift in Sources */,
+				A6791ED025DF4B50001016F7 /* UIViewController+Extensions.swift in Sources */,
 				A6791EC925DF464B001016F7 /* PhotoListCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
