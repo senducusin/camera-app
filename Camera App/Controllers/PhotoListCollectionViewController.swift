@@ -39,11 +39,34 @@ class PhotoListCollectionViewController: UICollectionViewController{
                 
                 self?.images.reverse()
                 self?.collectionView.reloadData()
-                print(self?.images)
                 
             }
             
         }
     }
     
+}
+
+extension PhotoListCollectionViewController{
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.images.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoListCollectionViewCell", for: indexPath) as? PhotoListCollectionViewCell else {
+            fatalError("PhotoListCollectionViewCell is not found!")
+        }
+        
+        let asset = self.images[indexPath.row]
+        let manager = PHImageManager.default()
+        
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil){ (image, _) in
+            
+            DispatchQueue.main.async {
+                cell.photoImage.image = image
+            }
+            
+        }
+        return cell
+    }
 }
