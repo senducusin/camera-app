@@ -10,6 +10,16 @@ import UIKit
 
 class AppContainerViewController: UIViewController{
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let photoListCVC = self.children.first as? PhotoListCollectionViewController else {
+            return
+        }
+        
+        photoListCVC.delegate = self
+    }
+    
     @IBAction func cameraButtonPressed(){
         guard let photoFiltersVC = self.storyboard?.instantiateViewController(identifier: "PhotoFiltersViewController") as? PhotoFiltersViewController else {
             fatalError("PhotoFiltersViewController is not found!")
@@ -18,4 +28,14 @@ class AppContainerViewController: UIViewController{
         self.addChildController(photoFiltersVC)
     }
     
+}
+
+extension AppContainerViewController: PhotoListCollectionViewControllerDelegate{
+    func photoListDidSelectImage(selectedImage: UIImage) {
+        self.showImagePreview(previewImage: selectedImage)
+    }
+    
+    private func showImagePreview(previewImage: UIImage){
+        
+    }
 }
