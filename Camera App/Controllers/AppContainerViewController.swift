@@ -36,6 +36,11 @@ extension AppContainerViewController: PhotoListCollectionViewControllerDelegate{
     }
     
     private func showImagePreview(previewImage: UIImage){
+        guard let photoPreviewVC = self.storyboard?.instantiateViewController(identifier: "PhotoPreviewViewController") as? PhotoPreviewViewController else {
+            fatalError("PhotoPreviewViewController is not found!")
+        }
         
+        photoPreviewVC.previewImage = previewImage
+        self.navigationController?.pushViewController(photoPreviewVC, animated: true)
     }
 }

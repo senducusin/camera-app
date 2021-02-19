@@ -81,11 +81,16 @@ extension PhotoListCollectionViewController{
         let manager = PHImageManager.default()
         
         let options = PHImageRequestOptions()
-        options.isSynchronous = true
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
+        options.version = .current
+        options.resizeMode = .exact
+        options.isSynchronous = false
         
-        manager.requestImage(for: asset, targetSize: CGSize(width: 320, height: 480), contentMode: .aspectFill, options: options) { [weak self] (image, _) in
-            
+        manager.requestImage(for: asset, targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight), contentMode: .aspectFill, options: options) { [weak self] (image, _) in
+    
             if let image = image {
+                print("test??")
                 self?.delegate?.photoListDidSelectImage(selectedImage: image)
             }
             
