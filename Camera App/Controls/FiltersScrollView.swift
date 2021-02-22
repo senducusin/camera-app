@@ -9,7 +9,12 @@ import Foundation
 import UIKit
 import CoreImage
 
+protocol FiltersScrollViewDelegate{
+    func filtersScrollViewDidSelectFilter(filter:CIFilter)
+}
+
 class FiltersScrollView: UIScrollView{
+    var filterDelegate: FiltersScrollViewDelegate?
     
     private var filterService: FilterService!
     
@@ -37,6 +42,9 @@ class FiltersScrollView: UIScrollView{
             let filterImageView = UIImageView.imageForFilterView()
             self.addSubview(filterImageView)
             
+            self.registerTapGestureRecognizer(for: filterImageView)
+            
+            filterImageView.isUserInteractionEnabled = true
             filterImageView.tag = index
             filterImageView.frame.origin.x = offset
             filterImageView.center.y = self.frame.height/2 - 15
@@ -52,5 +60,20 @@ class FiltersScrollView: UIScrollView{
 extension FiltersScrollView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.y = 0
+    }
+}
+
+extension FiltersScrollView {
+    private func registerTapGestureRecognizer(for view: UIView){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func tapped(recognizer: UITapGestureRecognizer){
+        guard let selectedFilter = recognizer.view as? UIImageView else {
+            return
+        }
+        
+        self.filterDelegate?.filtersScrollViewDidSelectFilter(filter: FilterService.all()[selectedFilter.tag])
     }
 }
