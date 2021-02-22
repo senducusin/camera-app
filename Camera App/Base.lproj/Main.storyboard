@@ -88,9 +88,17 @@
                                     <constraint firstAttribute="height" constant="50" id="raM-Xk-fMn"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Cancel" id="J9c-YX-v37"/>
+                                    <barButtonItem title="Cancel" id="J9c-YX-v37">
+                                        <connections>
+                                            <action selector="cancelButtonPressed" destination="v0l-zl-TBA" id="iaZ-sW-fLf"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="F4O-UW-2eN"/>
-                                    <barButtonItem title="Done" id="AKf-DR-YoX"/>
+                                    <barButtonItem title="Done" id="AKf-DR-YoX">
+                                        <connections>
+                                            <action selector="doneButtonPressed" destination="v0l-zl-TBA" id="RbQ-gK-q4y"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-Gq-5oB">

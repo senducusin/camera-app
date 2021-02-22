@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+protocol PhotoFilterViewControllerDelegate {
+    func photoFilterDone()
+    func photoFilterCancel()
+}
+
 class PhotoFiltersViewController: UIViewController {
     
     @IBOutlet weak var photoImageView: UIImageView!
@@ -20,6 +25,14 @@ class PhotoFiltersViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+    }
+    
+    @IBAction func cancelButtonPressed(){
+        
+    }
+    
+    @IBAction func doneButtonPressed(){
+        
     }
     
     private func setupUI(){
