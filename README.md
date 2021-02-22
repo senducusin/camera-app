@@ -21,17 +21,17 @@ All the demos are taken from a physical iOS device
 
 ### Display all images
 
-![](/Preview/preview-1.gif)
+![](/Previews/preview-1.gif)
 
 
 ### Zoom on an image
 
-![](/Preview/preview-2.gif)
+![](/Previews/preview-2.gif)
 
 
 ### Capture a new photo and apply a filter
 
-![](/Preview/preview-3.gif)
+![](/Previews/preview-3.gif)
 
 ---
 
