@@ -33,7 +33,19 @@ class PhotoFiltersViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(){
+        guard let selectedImage = self.photoImageView.image else {
+            return
+        }
         
+        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(image(_ : didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer){
+        if let error = error {
+            print(error.localizedDescription)
+        }else {
+            self.delegate?.photoFilterDone()
+        }
     }
     
     private func setupUI(){
