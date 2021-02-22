@@ -33,7 +33,7 @@ class FilterService {
         let sepiaFilter = CIFilter(name: "CISepiaTone")!
         sepiaFilter.setValue(10.0, forKey: kCIInputIntensityKey)
         
-        return [blurFilter, halfToneFilter, crystallizeFilter, monochromeFilter, sepiaFilter]
+        return [blurFilter, crystallizeFilter, halfToneFilter, monochromeFilter, sepiaFilter]
     }
     
     func applyFilter(filter:CIFilter, to inputImage: UIImage, completion:@escaping((UIImage) -> ())){
