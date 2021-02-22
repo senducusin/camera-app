@@ -15,6 +15,7 @@ protocol FiltersScrollViewDelegate{
 
 class FiltersScrollView: UIScrollView{
     var filterDelegate: FiltersScrollViewDelegate?
+    var filterSelectors = [UIImageView]()
     
     private var filterService: FilterService!
     
@@ -49,6 +50,8 @@ class FiltersScrollView: UIScrollView{
             filterImageView.frame.origin.x = offset
             filterImageView.center.y = self.frame.height/2 - 15
             
+            filterSelectors.append(filterImageView)
+            
             offset += filterImageView.frame.width + filterImageView.frame.width/4
             self.contentSize = CGSize(width: offset, height: self.frame.height)
             
@@ -70,10 +73,25 @@ extension FiltersScrollView {
     }
     
     @objc func tapped(recognizer: UITapGestureRecognizer){
-        guard let selectedFilter = recognizer.view as? UIImageView else {
+        guard let selectedFilterView = recognizer.view as? UIImageView else {
             return
         }
         
-        self.filterDelegate?.filtersScrollViewDidSelectFilter(filter: FilterService.all()[selectedFilter.tag])
+        self.clearFilterSelected()
+        self.showFilterIsSelected(selectedFilterView: selectedFilterView)
+        
+        self.filterDelegate?.filtersScrollViewDidSelectFilter(filter: FilterService.all()[selectedFilterView.tag])
+    }
+    
+    private func clearFilterSelected(){
+        for filterSelector in filterSelectors {
+            filterSelector.layer.borderWidth = 0.0
+        }
+    }
+    
+    private func showFilterIsSelected(selectedFilterView:UIImageView){
+        selectedFilterView.layer.masksToBounds = true
+        selectedFilterView.layer.borderColor = UIColor.white.cgColor
+        selectedFilterView.layer.borderWidth = 2.0
     }
 }

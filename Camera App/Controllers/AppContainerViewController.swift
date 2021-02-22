@@ -16,6 +16,8 @@ class AppContainerViewController: UIViewController, UINavigationControllerDelega
         guard let photoListCVC = self.children.first as? PhotoListCollectionViewController else {
             return
         }
+        let screenRect = UIScreen.main.bounds
+        print(screenRect.width)
         
         photoListCVC.delegate = self
     }
