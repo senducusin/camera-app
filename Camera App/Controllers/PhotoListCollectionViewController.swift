@@ -90,7 +90,6 @@ extension PhotoListCollectionViewController{
         manager.requestImage(for: asset, targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight), contentMode: .aspectFill, options: options) { [weak self] (image, _) in
     
             if let image = image {
-                print("test??")
                 self?.delegate?.photoListDidSelectImage(selectedImage: image)
             }
             
