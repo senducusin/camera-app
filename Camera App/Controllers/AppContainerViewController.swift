@@ -50,5 +50,14 @@ extension AppContainerViewController: PhotoListCollectionViewControllerDelegate{
 }
 
 extension AppContainerViewController: UIImagePickerControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
