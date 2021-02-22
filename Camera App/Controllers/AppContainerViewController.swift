@@ -56,7 +56,6 @@ extension AppContainerViewController: UIImagePickerControllerDelegate{
         self.showPhotoFiltersViewController(for: originalImage)
         
         picker.dismiss(animated: true, completion: nil)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -65,10 +64,11 @@ extension AppContainerViewController: UIImagePickerControllerDelegate{
     
     private func showPhotoFiltersViewController(for image:UIImage){
         guard let photoFilterVC = self.storyboard?.instantiateViewController(identifier: "PhotoFiltersViewController") as? PhotoFiltersViewController else {
+            
             fatalError("PhotoFiltersViewController is not found!")
         }
         
         photoFilterVC.image = image
-        self.addChild(photoFilterVC)
+        self.addChildController(photoFilterVC)
     }
 }
