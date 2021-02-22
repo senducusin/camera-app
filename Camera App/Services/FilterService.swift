@@ -17,7 +17,6 @@ class FilterService {
     }
     
     static func all() -> [CIFilter]{
-        
         let blurFilter = CIFilter(name: "CIGaussianBlur")!
         blurFilter.setValue(5.0, forKey: kCIInputRadiusKey)
         

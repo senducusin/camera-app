@@ -19,6 +19,7 @@
 		A6791ED525DF5690001016F7 /* PhotoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ED425DF5690001016F7 /* PhotoListCollectionViewCell.swift */; };
 		A6791ED825DF995D001016F7 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ED725DF995D001016F7 /* PhotoPreviewViewController.swift */; };
 		A6986AF925E3444400B55FF1 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6986AF825E3444400B55FF1 /* FilterService.swift */; };
+		A6986B0225E34D1E00B55FF1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6986B0125E34D1E00B55FF1 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A6791ED425DF5690001016F7 /* PhotoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6791ED725DF995D001016F7 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		A6986AF825E3444400B55FF1 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
+		A6986B0125E34D1E00B55FF1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */,
+				A6986B0125E34D1E00B55FF1 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6986B0225E34D1E00B55FF1 /* UIImageView+Extensions.swift in Sources */,
 				A6791ECC25DF4696001016F7 /* PhotoFiltersViewController.swift in Sources */,
 				A6791EAD25DF41FB001016F7 /* AppDelegate.swift in Sources */,
 				A6791EAF25DF41FB001016F7 /* SceneDelegate.swift in Sources */,
