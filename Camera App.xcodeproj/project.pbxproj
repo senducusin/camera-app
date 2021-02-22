@@ -18,6 +18,7 @@
 		A6791ED025DF4B50001016F7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */; };
 		A6791ED525DF5690001016F7 /* PhotoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ED425DF5690001016F7 /* PhotoListCollectionViewCell.swift */; };
 		A6791ED825DF995D001016F7 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6791ED725DF995D001016F7 /* PhotoPreviewViewController.swift */; };
+		A6986AF925E3444400B55FF1 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6986AF825E3444400B55FF1 /* FilterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A6791ECF25DF4B50001016F7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A6791ED425DF5690001016F7 /* PhotoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6791ED725DF995D001016F7 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
+		A6986AF825E3444400B55FF1 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		A6791EAB25DF41FB001016F7 /* Camera App */ = {
 			isa = PBXGroup;
 			children = (
+				A6986AF725E3443400B55FF1 /* Services */,
 				A6791ED325DF5679001016F7 /* Cells */,
 				A6791ECE25DF4B3A001016F7 /* Extensions */,
 				A6791EC325DF450D001016F7 /* Controllers */,
@@ -104,6 +107,14 @@
 				A6791ED425DF5690001016F7 /* PhotoListCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A6986AF725E3443400B55FF1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A6986AF825E3444400B55FF1 /* FilterService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				A6791EC625DF4603001016F7 /* AppContainerViewController.swift in Sources */,
 				A6791ED825DF995D001016F7 /* PhotoPreviewViewController.swift in Sources */,
 				A6791ED025DF4B50001016F7 /* UIViewController+Extensions.swift in Sources */,
+				A6986AF925E3444400B55FF1 /* FilterService.swift in Sources */,
 				A6791EC925DF464B001016F7 /* PhotoListCollectionViewController.swift in Sources */,
 				A6791ED525DF5690001016F7 /* PhotoListCollectionViewCell.swift in Sources */,
 			);
