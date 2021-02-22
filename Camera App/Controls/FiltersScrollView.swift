@@ -43,6 +43,8 @@ class FiltersScrollView: UIScrollView{
             
             offset += filterImageView.frame.width + filterImageView.frame.width/4
             self.contentSize = CGSize(width: offset, height: self.frame.height)
+            
+            self.filterService.applyFilter(filter: filter, to: filterImageView.image!) { filterImageView.image = $0 }
         }
     }
 }
