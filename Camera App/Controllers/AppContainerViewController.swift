@@ -69,6 +69,30 @@ extension AppContainerViewController: UIImagePickerControllerDelegate{
         }
         
         photoFilterVC.image = image
+        photoFilterVC.delegate = self
         self.addChildController(photoFilterVC)
+    }
+}
+
+extension AppContainerViewController: PhotoFilterViewControllerDelegate{
+    func photoFilterCancel() {
+        self.showPhotosList()
+    }
+    
+    func photoFilterDone() {
+        self.showPhotosList()
+    }
+    
+    private func showPhotosList(){
+        self.view.subviews.forEach{
+            $0.removeFromSuperview()
+        }
+        
+        guard let photoListCVC = self.storyboard?.instantiateViewController(identifier: "PhotoListCollectionViewController") as?  PhotoListCollectionViewController else {
+            fatalError("PhotoListCollectionViewController is not found!")
+        }
+        
+        photoListCVC.delegate = self
+        self.addChildController(photoListCVC)
     }
 }

@@ -18,6 +18,7 @@ class PhotoFiltersViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var filtersScrollView: FiltersScrollView!
     
+    var delegate: PhotoFilterViewControllerDelegate?
     var image: UIImage?
     private var filterService: FilterService!
     
@@ -28,7 +29,7 @@ class PhotoFiltersViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(){
-        
+        self.delegate?.photoFilterCancel()
     }
     
     @IBAction func doneButtonPressed(){
