@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreImage
 
-class FiltersScrollView: UIScrollView, UIScrollViewDelegate{
+class FiltersScrollView: UIScrollView{
     
     private var filterService: FilterService!
     
@@ -47,7 +47,7 @@ class FiltersScrollView: UIScrollView, UIScrollViewDelegate{
     }
 }
 
-extension FiltersScrollView {
+extension FiltersScrollView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.y = 0
     }

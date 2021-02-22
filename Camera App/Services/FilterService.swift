@@ -35,4 +35,14 @@ class FilterService {
         
         return [blurFilter, halfToneFilter, crystallizeFilter, monochromeFilter, sepiaFilter]
     }
+    
+    func applyFilter(filter:CIFilter, to inputImage: UIImage, completion:@escaping((UIImage) -> ())){
+        let sourceImage = CIImage(image: inputImage)!
+        filter.setValue(sourceImage, forKey: kCIInputImageKey)
+        
+        if let cgImage = self.context.createCGImage(filter.outputImage!, from: filter.outputImage!.extent) {
+            let processedImage = UIImage(cgImage: cgImage, scale: inputImage.scale, orientation: inputImage.imageOrientation)
+            completion(processedImage)
+        }
+    }
 }
