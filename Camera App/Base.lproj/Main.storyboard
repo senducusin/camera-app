@@ -126,6 +126,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filtersScrollView" destination="hMj-NT-MUp" id="OPR-lO-LpY"/>
                         <outlet property="photoImageView" destination="J8u-mm-5oh" id="LtK-dL-NNB"/>
                     </connections>
                 </viewController>
