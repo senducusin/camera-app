@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AppContainerViewController: UIViewController{
+class AppContainerViewController: UIViewController, UINavigationControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,15 @@ class AppContainerViewController: UIViewController{
     }
     
     @IBAction func cameraButtonPressed(){
-        guard let photoFiltersVC = self.storyboard?.instantiateViewController(identifier: "PhotoFiltersViewController") as? PhotoFiltersViewController else {
-            fatalError("PhotoFiltersViewController is not found!")
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let imagePickerVC = UIImagePickerController()
+            imagePickerVC.sourceType = .camera
+            imagePickerVC.delegate = self
+            
+            self.present(imagePickerVC, animated: true, completion: nil)
         }
         
-        self.addChildController(photoFiltersVC)
     }
     
 }
@@ -43,4 +47,8 @@ extension AppContainerViewController: PhotoListCollectionViewControllerDelegate{
         photoPreviewVC.previewImage = previewImage
         self.navigationController?.pushViewController(photoPreviewVC, animated: true)
     }
+}
+
+extension AppContainerViewController: UIImagePickerControllerDelegate{
+    
 }
