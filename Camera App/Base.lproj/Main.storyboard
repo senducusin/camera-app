@@ -125,6 +125,9 @@
                             <constraint firstItem="Gjd-Gq-5oB" firstAttribute="top" secondItem="k0X-ze-Rol" secondAttribute="bottom" id="uYw-aP-BeJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="J8u-mm-5oh" id="LtK-dL-NNB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsk-KO-NSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
